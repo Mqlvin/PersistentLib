@@ -1,12 +1,19 @@
 package test;
 
-import com.sun.jndi.ldap.PersistentSearchControl;
-import me.henry.persistent.Persistent;
+import main.me.henry.persistent.Persistent;
+import main.me.henry.persistent.config.ConfigFormat;
 import test.configs.MyYamlConfig;
+
+import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
         Persistent configHandler = new Persistent();
-        configHandler.register(new MyYamlConfig());
+
+        MyYamlConfig myConfig = new MyYamlConfig("myNewConfig", new File("./"), ConfigFormat.YAML);
+        configHandler.register(myConfig);
+        myConfig.load();
+
+
     }
 }

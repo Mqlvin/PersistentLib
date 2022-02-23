@@ -1,9 +1,7 @@
-package me.henry.persistent;
+package main.me.henry.persistent;
 
-import me.henry.persistent.config.Config;
-import me.henry.persistent.config.ConfigHandler;
-
-import java.util.ArrayList;
+import main.me.henry.persistent.config.Config;
+import main.me.henry.persistent.config.ConfigHandler;
 
 public class Persistent {
     private final ConfigHandler configs = new ConfigHandler();

@@ -1,10 +1,10 @@
-package me.henry.persistent.config;
+package main.me.henry.persistent.config;
 
-import me.henry.persistent.datum.Datum;
-import me.henry.persistent.datum.DatumType;
-import me.henry.persistent.exceptions.InvalidDatumTypeException;
+import main.me.henry.persistent.datum.Datum;
+import main.me.henry.persistent.exceptions.InvalidDatumTypeException;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
 public class ConfigHandler {
@@ -16,10 +16,12 @@ public class ConfigHandler {
                 continue;
             }
             Datum fieldInfo = f.getAnnotation(Datum.class);
-
+            System.out.println(Modifier.toString(f.getModifiers()));
             if(!f.getType().equals(fieldInfo.type().getType())) {
                 throw new InvalidDatumTypeException("The datum type \"" + fieldInfo.type().name().toLowerCase() + "\" cannot be applied to field \"" + f.getType().getName() + "\"");
             }
         }
     }
+
+
 }

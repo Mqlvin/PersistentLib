@@ -1,6 +1,4 @@
-package me.henry.persistent.datum;
-
-import me.henry.persistent.datum.DatumType;
+package main.me.henry.persistent.datum;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

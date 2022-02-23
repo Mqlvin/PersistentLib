@@ -1,4 +1,4 @@
-package me.henry.persistent.datum;
+package main.me.henry.persistent.datum;
 
 public enum DatumType {
     BOOLEAN(Boolean.class),

@@ -11,7 +11,6 @@ public class Main {
         Persistent configHandler = new Persistent();
 
         MyYamlConfig myConfig = new MyYamlConfig("myNewConfig", new File("./"), ConfigFormat.YAML);
-        configHandler.register(myConfig);
         myConfig.load();
 
 
